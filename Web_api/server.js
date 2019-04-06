@@ -8,7 +8,7 @@ var passport = require('passport');
 
 const url = 'mongodb://localhost:27017';
 const dbname = 'AF';
-mongoose.connect('mongodb://mongodb://localhost:27017/AF', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost:27017/AF', { useNewUrlParser: true })
 app.use(cors());
 
 app.use(passport.initialize());
