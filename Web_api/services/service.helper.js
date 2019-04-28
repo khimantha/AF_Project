@@ -3,8 +3,9 @@ const mongoose = require('mongoose');
 
 
 
-function addDocument(data, callback) {
-    data.save(function (err, modelObj) {
+function addDocument(model,data, callback) {
+    let modelobj = model(data);
+    modelobj.save(function (err, modelObj) {
         if (err) {
             callback(err, null);
 

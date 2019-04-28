@@ -1,7 +1,7 @@
 const waterfall = require('async-waterfall');
 const bcrypt = require('bcrypt');
 
-const User = mongoose.model('Users')
+const User = require('../models/Users');
 const userService = require('../services/User.service')
 const saltRounds = 10;
 
@@ -26,7 +26,7 @@ register = function(req,res){
             user.hash = hash,
             user.email = req.body.email
         
-            userService.registerUser(user,function(err,userdat){
+            userService.registerUser(User,user,function(err,userdat){
                 if(err){
                     callback(err,null);
 
